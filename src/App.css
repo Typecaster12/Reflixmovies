@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Playfair Display", serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* header component  */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  color: white;
+  text-align: center;
+}
+
+.header-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.inp-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #888;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #e53935;
+}
+
+.search-btn {
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+.search-btn:hover {
+  background-color: #c62828;
+}
+
+/* Mobile tweaks for smaller screens */
+@media (max-width: 480px) {
+  .inp-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-btn {
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}
+
+
+/* moviesCard */
+.cards-container {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Grid layout for responsive design */
+.movies-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Movie card styles */
+.movie-card {
+  background: #202020;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  color: #fff;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(229, 57, 53, 0.4);
+}
+
+/* Poster image */
+.movie-poster {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-bottom: 1px solid #333;
+}
+
+/* Movie title */
+.movie-title {
+  font-size: 1rem;
+  margin: 0.6rem 0 0.2rem;
+  font-weight: 600;
+  color: #ffcccb;
+}
+
+/* Year */
+.movie-year {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* Optional: hover fade-in effect */
+.movie-card:hover .movie-title {
+  color: #ff5252;
+}
+
+.load-more-btn {
+  padding: 0.7rem 1.5rem;
+  background-color: #e53935;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.load-more-btn:hover {
+  background-color: #c62828;
+}
