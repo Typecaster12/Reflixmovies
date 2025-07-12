@@ -1,6 +1,6 @@
 // import Header from "./Components/Header";
 import './App.css';
-// import { useState } from "react";
+import Fav from './Components/Fav';
 import MovieCards from "./Components/MovieCards";
 
 

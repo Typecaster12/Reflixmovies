@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getRequest } from "../API/ApiInstance";
 import Header from "./Header";
+import Fav from "./Fav";
 
 const MovieCards = () => {
     const [moviesData, setMoviesData] = useState({});
@@ -10,6 +11,8 @@ const MovieCards = () => {
     const [value, setValue] = useState('avengers');
     //for more pages;
     const [page, setPage] = useState(1);
+    //for fav movies;
+    const [favList, setFavList] = useState([]);
 
     //get the movie when page loads;
     const dataRequest = async (value, page) => {
@@ -45,6 +48,26 @@ const MovieCards = () => {
                             <img src={curEle.Poster} alt="movie-poster" className="movie-poster" />
                             <h3 className="movie-title">Title: {curEle.Title}</h3>
                             <p className="movie-year">Year: {curEle.Year}</p>
+
+                            {/* adding to fav list  */}
+                            <button
+                                className="fav-btn"
+                                onClick={() =>
+                                    setFavList((prev) => {
+                                        const isFav = prev.some((movie) => movie.Poster === curEle.Poster);
+
+                                        if (isFav) {
+                                            // Remove from favorites
+                                            return prev.filter((movie) => movie.Poster !== curEle.Poster);
+                                        } else {
+                                            // Add to favorites
+                                            return [...prev, curEle];
+                                        }
+                                    })
+                                }
+                            >
+                                {favList.some((movie) => movie.Poster === curEle.Poster) ? "❤️" : "🤍"}
+                            </button>
                         </li>
                     ))}
                 </ul>
@@ -57,6 +80,8 @@ const MovieCards = () => {
                     </div>
                 )}
             </div>
+
+            <Fav movieData={moviesData} favList={favList} />
         </>
     )
 }

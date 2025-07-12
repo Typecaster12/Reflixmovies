@@ -163,3 +163,36 @@ body {
 .load-more-btn:hover {
   background-color: #c62828;
 }
+
+
+.fav-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.movie-card {
+  position: relative;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  transition: box-shadow 0.2s;
+}
+
+.favList-container {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.fav-heading {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
